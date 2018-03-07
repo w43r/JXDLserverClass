@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.spd.mapper.TestPicMapper"> 
+    <!-- 这里的id必须和UserMapper接口中的接口方法名相同，不然运行的时候也要报错 --> 
+    
+<!--     <sql id="dynaSql">
+
+		<if test="date !=null and date!=''">
+		<![CDATA[
+			and s.storageDate>=#{startDate}
+			]]>
+		</if>
+		<if test="endDate !=null">
+			<![CDATA[
+				and s.storageDate <=#{endDate}
+			]]>
+		</if>
+		<if test="className!=null and className!=''">
+			and c.className like '%${className}%'
+		</if> 
+	</sql> -->
+	
+    <select id="getPictures" resultType="java.util.HashMap"  parameterType="map"> 
+    <![CDATA[
+    	select id,picName from t_testpic
+		]]>
+    </select>
+ 	 
+</mapper> 
